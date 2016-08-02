@@ -29,7 +29,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.rangers.develop.common.DataController;
 import cn.rangers.develop.model.User;
-import cn.rangers.develop.service.UserService;
 import cn.rangers.develop.service.UserServiceImpl;
 
 /**

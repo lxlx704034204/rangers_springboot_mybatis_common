@@ -42,6 +42,17 @@ public interface BaseService <T extends BaseEntity>{
 	 public List<T> queryAll();
 	 
 	 /**
+	  * 分页查询所有 
+	  * 
+	  * @param t
+	  * @return
+	  * 
+	  * @author fuhw
+	  * @date 2016年8月2日 下午2:11:48
+	  */
+	 public List<T> queryPage(T t);
+	 
+	 /**
 	  * 
 	  * 按条件查询
 	  *

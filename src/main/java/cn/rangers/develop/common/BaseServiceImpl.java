@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.github.pagehelper.PageHelper;
+
 public class BaseServiceImpl<T extends BaseEntity , DAO extends BaseMapper<T>> implements BaseService<T>{
 
 	@Autowired
@@ -25,9 +27,18 @@ public class BaseServiceImpl<T extends BaseEntity , DAO extends BaseMapper<T>> i
 	@Override
 	public List<T> queryAll() {
 		return dao.selectAll();
+	}
+	
+	@Override
+	public List<T> queryPage(T t) {
+		if (t.getPage() != null && t.getRows() != null) {
+            PageHelper.startPage(t.getPage(), t.getRows(), "id");
+        }
+		return dao.selectAll();
 		
 	}
 
+	
 	@Override
 	public List<T> queryListByWhere(Object example) {
 		return dao.selectByExample(example);
@@ -86,6 +97,8 @@ public class BaseServiceImpl<T extends BaseEntity , DAO extends BaseMapper<T>> i
 	public int deleteByExample(Object example) {
 		return dao.deleteByExample(example);
 	}
+
+	
 
 	
 	
