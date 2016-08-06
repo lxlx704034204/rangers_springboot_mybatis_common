@@ -21,9 +21,9 @@
   
 </script>
 <body>
-		<form id="uploadDocument" action="http://localhost:8099/data/upload"  method="post" enctype="multipart/form-data" >
-			<input  id="filePath" name="filePath" class="form-control input-sm keyDownFilter" type="file" />
-			<button id="upload_doc" type="submit" >选择文件后点击upload文档</button>
+		<form id="uploadDocument" action="http://localhost:8099/data/upload"   method="post" enctype="multipart/form-data" >
+			<input multiple="multiple" id="filePath" name="filePath" class="form-control input-sm keyDownFilter" type="file" />
+			<button id="upload_doc" type="submit" >上传</button>
 		</form>
 </body>
 </html>
