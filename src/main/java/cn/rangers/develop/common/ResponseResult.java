@@ -25,8 +25,16 @@ public class ResponseResult {
 
 	private String msg;
 	
-	public static ResponseResult getInstance() {
-		return new ResponseResult();
+	/**
+	 * 获取一个实例
+	 *
+	 * @return
+	 * 
+	 * @author Administrator
+	 * @date 2016年8月6日 下午1:14:04
+	 */
+	public static ResponseResult getInstance(boolean isSuccess) {
+		return new ResponseResult(isSuccess);
 	}
 
 	private Map<String, String> errors = Maps.newHashMap();

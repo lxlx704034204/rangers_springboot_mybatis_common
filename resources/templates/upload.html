@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ></meta>
+<title>Insert title here</title>
+</head>
+ <script type="text/javascript">
+//  $("#upload_doc").click(
+// 		 	function(){
+// 		  		var curWwwPath = window.document.location.href;
+// 		  		var pathName =  window.document.location.pathname;
+// 		  		var pos = curWwwPath.indexOf(pathName);
+// 		  		var localhostPaht = curWwwPath.substring(0,pos);
+// 		  		var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+// 		  		alert(localhostPaht + projectName);
+// 		  		 $("#upload_doc").attr("action",localhostPaht + projectName+"/data/upload")
+// 		  	}		 
+//  );
+ 
+ 
+  
+</script>
+<body>
+		<form id="uploadDocument" action="http://localhost:8099/data/upload"  method="post" enctype="multipart/form-data" >
+			<input  id="filePath" name="filePath" class="form-control input-sm keyDownFilter" type="file" />
+			<button id="upload_doc" type="submit" >选择文件后点击upload文档</button>
+		</form>
+</body>
+</html>

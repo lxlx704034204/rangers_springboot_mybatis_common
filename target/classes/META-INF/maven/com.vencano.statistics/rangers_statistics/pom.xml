@@ -24,6 +24,8 @@
 		<mybatis.spring.version>1.2.4</mybatis.spring.version>
 		<mapper.version>3.3.6</mapper.version>
 		<pagehelper.version>4.1.1</pagehelper.version>
+		<poi.version>3.9</poi.version>
+		<poi.excelant.version>3.9</poi.excelant.version>
 	</properties>
 
 
@@ -34,10 +36,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!-- Thymeleaf是一个XML/XHTML/HTML5模板引擎 -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-starter-thymeleaf</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,10 +56,10 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!-- freemarker 模板引擎的支持 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>		
+<!--         <dependency> -->
+<!--             <groupId>org.springframework.boot</groupId> -->
+<!--             <artifactId>spring-boot-starter-freemarker</artifactId> -->
+<!--         </dependency>		 -->
 		
 
 		<!-- <dependency> -->
@@ -197,6 +199,19 @@
 		<!-- </dependency> -->
 
 
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>${poi.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-excelant -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-excelant</artifactId>
+		    <version>${poi.excelant.version}</version>
+		</dependency>
+		
 
 	</dependencies>
 

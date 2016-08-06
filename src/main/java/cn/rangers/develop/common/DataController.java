@@ -46,7 +46,7 @@ public class DataController<T extends BaseEntity , S extends BaseService<T>> ext
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseResult get(@PathVariable Integer id) {
 //		this.outLog("查询", id);
-		ResponseResult result = ResponseResult.getInstance();
+		ResponseResult result = ResponseResult.getInstance(false);
 		try {
 			T data = service.selectByPrimaryKey(id);
 			if(data == null) {
@@ -77,7 +77,7 @@ public class DataController<T extends BaseEntity , S extends BaseService<T>> ext
 	public ResponseResult queryPage(@RequestParam(value="pageNum", required=false, defaultValue="1")int pageNum,  
             @RequestParam(value="pageSize", required=false, defaultValue="10")int pageSize  ) {
 		this.outLog("分页查询", pageNum,pageSize);
-		ResponseResult result = ResponseResult.getInstance();
+		ResponseResult result = ResponseResult.getInstance(false);
 		RowBounds rowBounds = new RowBounds(pageNum, pageSize);
 		Map<String,Object> map = new HashMap<String,Object>();
 		try {

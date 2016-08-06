@@ -22,13 +22,13 @@ spring:
 #        type: com.alibaba.druid.pool.DruidDataSource
 #        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
-    mvc:
-        view:
-            prefix: /templates/
-            suffix: .ftl
-    freemarker:
-        cache: false
-        request-context-attribute: request
+#    mvc:
+#        view:
+#            prefix: /templates/
+#            suffix: .ftl
+#    freemarker:
+#        cache: false
+#        request-context-attribute: request
 
 #以下属性不可用
 #mybatis:

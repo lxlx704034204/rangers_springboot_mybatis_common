@@ -1,18 +1,19 @@
 package cn.rangers.develop.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-@RequestMapping("/page")
+@RestController
+@RequestMapping("page")
 public class IndexController{
 
     @RequestMapping(value="{pageName}",method=RequestMethod.GET)
-    public String toPage(@PathVariable("pageName")String pageName){
+    public ModelAndView toPage(@PathVariable("pageName")String pageName){
     	System.out.println(pageName);
-        return pageName;
+        return new ModelAndView(pageName);
     }
     
 }
