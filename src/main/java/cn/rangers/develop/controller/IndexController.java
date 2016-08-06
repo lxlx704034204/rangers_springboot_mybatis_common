@@ -12,7 +12,7 @@ public class IndexController{
 
     @RequestMapping(value="{pageName}",method=RequestMethod.GET)
     public ModelAndView toPage(@PathVariable("pageName")String pageName){
-    	System.out.println(pageName);
+    	System.out.println("当前页面："+pageName);
         return new ModelAndView(pageName);
     }
     

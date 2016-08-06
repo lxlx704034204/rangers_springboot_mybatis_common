@@ -298,6 +298,66 @@ public class ExcelOperaterUtils {
 	}
 
 	/**
+	 * 网络下载excel文件
+	 *
+	 * @param contents
+	 * @param params
+	 * 
+	 * @author Administrator
+	 * @date 2016年8月6日 下午9:43:53
+	 */
+	public Workbook downloadExcel(Map<String, List<String>> contents, LinkedHashMap<String, String> params) {
+		// 1.创建Excel工作薄对象
+		wb = new HSSFWorkbook();
+		// 2.创建Excel工作表对象
+		HSSFSheet sheet = (HSSFSheet) wb.createSheet("工作表");
+		// 3.创建Excel工作表的行
+		HSSFRow row = null;
+		// 4.创建单元格样式
+		CellStyle cellStyle = wb.createCellStyle();
+		// 设置这些样式
+		cellStyle.setFillForegroundColor(HSSFColor.SKY_BLUE.index);
+		cellStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+		cellStyle.setBorderBottom(HSSFCellStyle.BORDER_THIN);
+		cellStyle.setBorderLeft(HSSFCellStyle.BORDER_THIN);
+		cellStyle.setBorderRight(HSSFCellStyle.BORDER_THIN);
+		cellStyle.setBorderTop(HSSFCellStyle.BORDER_THIN);
+		cellStyle.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+
+		List<String> fieldList = new ArrayList<>();// 获取字段名
+		List<List<String>> fields = new ArrayList<>();// 存所有列的集合
+		/**
+		 * 字段名列表
+		 */
+		for (Entry<String, String> entry : params.entrySet()) {
+			fieldList.add(entry.getKey());
+		}
+		/**
+		 * 解析封装数据：所有列的集合
+		 */
+		for (int i = 0; i < fieldList.size(); i++) {
+			if (contents.get(fieldList.get(i)) == null || fieldList.get(i) == null) {
+				continue;
+			}
+			fields.add(contents.get(fieldList.get(i)));
+		}
+
+		for (int j = 0; j < fields.get(0).size(); j++) {// 每列多少个值（行数）
+			row = sheet.createRow(j);// 每一行，创建一个excel表格的行
+			for (int i = 0; i < fields.size(); i++) {// 几列属性（列数）
+				if (fields.get(i).get(j) == null) {
+					break;
+				}
+				// 在该行创建一个cell格子，存放的值，这一列i，这一行j的值
+				row.createCell(i).setCellStyle(cellStyle);
+				row.createCell(i).setCellValue(fields.get(i).get(j));
+			}
+		}
+		
+		return wb;
+	}
+	
+	/**
 	 * 根据XSSFCell类型设置数据
 	 * 
 	 * @param cell
