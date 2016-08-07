@@ -172,8 +172,11 @@ public class DataProcessController extends BaseController<BaseEntity>{
         	Map<String, List<String>> contents = Maps.newHashMap();
         	List<String> nameList =  new ArrayList<>();
         	List<String> pwdList = new ArrayList<>();
+        	nameList.add("姓名");
         	nameList.add("范冰冰");
         	nameList.add("李晨");
+        	
+        	pwdList.add("密码");
         	pwdList.add("12340");
         	pwdList.add("454356");
         	contents.put("name", nameList);

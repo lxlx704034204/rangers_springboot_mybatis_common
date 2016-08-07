@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping("page")
+@RequestMapping("/page")
 public class IndexController{
 
     @RequestMapping(value="{pageName}",method=RequestMethod.GET)

@@ -18,13 +18,13 @@
 //  );
  
   	function download(){
-        var url="http://localhost:8099/data/download";
+        var url="../data/download";
         window.open(url);
     }
   
 </script>
 <body>
-		<form id="uploadDocument" action="http://localhost:8099/data/upload"   method="post" enctype="multipart/form-data" >
+		<form id="uploadDocument" action="../data/upload"   method="post" enctype="multipart/form-data" >
 			<input multiple="multiple" id="filePath" name="filePath" class="form-control input-sm keyDownFilter" type="file" />
 			<button id="upload_doc" type="submit" >上传</button>
 			<input type="button" value="下载" onclick="download()"/>
