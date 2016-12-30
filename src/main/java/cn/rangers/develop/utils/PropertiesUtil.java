@@ -137,12 +137,12 @@ public class PropertiesUtil {
     	}
     }
     
-    public static void main(String[] args) {
-        String model = PropertiesUtil.getInstatnce().getValue("project.model");
-        System.out.println(model);
-        String dbConfig = PropertiesUtil.getDBConfig();
-        System.out.println(dbConfig);
-        
-    }
+//    public static void main(String[] args) {
+//        String model = PropertiesUtil.getInstatnce().getValue("project.model");
+//        System.out.println(model);
+//        String dbConfig = PropertiesUtil.getDBConfig();
+//        System.out.println(dbConfig);
+//        
+//    }
 
 }

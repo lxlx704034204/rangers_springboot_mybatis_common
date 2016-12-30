@@ -24,6 +24,8 @@
 
 package cn.rangers.develop.model;
 
+import com.wordnik.swagger.annotations.ApiModel;
+
 import cn.rangers.develop.common.BaseEntity;
 
 /**
@@ -36,6 +38,7 @@ import cn.rangers.develop.common.BaseEntity;
  * @copyright (c) 2016 SunTime Co'Ltd Inc. All rights reserved.
  * @date 2016年7月31日 下午3:51:21
  */
+@ApiModel(value = "A SayingRepresentation is a representation of greeting")
 public class City extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 

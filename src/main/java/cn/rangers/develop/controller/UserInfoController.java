@@ -36,6 +36,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageInfo;
 
+import cn.rangers.develop.common.BaseController;
+import cn.rangers.develop.model.User;
 import cn.rangers.develop.model.UserInfo;
 import cn.rangers.develop.service.UserInfoService;
 
@@ -45,7 +47,7 @@ import cn.rangers.develop.service.UserInfoService;
  */
 @RestController
 @RequestMapping("/users")
-public class UserInfoController {
+public class UserInfoController extends BaseController<User> {
 
     @Autowired
     private UserInfoService userInfoService;
